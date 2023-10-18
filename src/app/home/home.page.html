@@ -21,18 +21,47 @@
   <ion-item>
     <ion-input label="Search Cerbung" labelPlacement="floating" [(ngModel)]="cari_cerbung"></ion-input>
   </ion-item>
-    <ion-item>
-      <ion-button fill="solid" expand="block" color="dark" size="small" width="50px">All
-        <ion-icon aria-hidden="true"></ion-icon>
-      </ion-button>
-      <ion-button fill="solid" expand="block" color="dark" size="small" width="50px">Action
-        <ion-icon aria-hidden="true" name="Star-outline"></ion-icon>
-      </ion-button>
-      <ion-button fill="solid" expand="block" color="dark" size="small" width="50px">Horror
-        <ion-icon aria-hidden="true" name="logo-snapchat"></ion-icon>
-      </ion-button>
-      <ion-button fill="solid" expand="block" color="dark" size="small" width="50px">Comedy
-        <ion-icon aria-hidden="true" name="happy-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
+  <ion-item>
+    <ion-button fill="solid" expand="block" color="dark" size="small" width="50px">All
+      <ion-icon aria-hidden="true"></ion-icon>
+    </ion-button>
+    <ion-button fill="solid" expand="block" color="dark" size="small" width="50px">Action
+      <ion-icon aria-hidden="true" name="Star-outline"></ion-icon>
+    </ion-button>
+    <ion-button fill="solid" expand="block" color="dark" size="small" width="50px">Horror
+      <ion-icon aria-hidden="true" name="logo-snapchat"></ion-icon>
+    </ion-button>
+    <ion-button fill="solid" expand="block" color="dark" size="small" width="50px">Comedy
+      <ion-icon aria-hidden="true" name="happy-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+
+  <div>
+    <ion-card *ngFor="let cerbung of cerbungs">
+      <img [src]="cerbung.url" />
+      <ion-card-header>
+        <ion-item>
+          <ion-card-title>{{cerbung.judul}}</ion-card-title>
+        </ion-item>
+        <ion-item>
+          <ion-card-subtitle>
+            by {{cerbung.author}}
+          </ion-card-subtitle>
+        </ion-item>
+        <ion-item>
+          <ion-label><ion-icon name="reader-outline"></ion-icon> {{cerbung.paragraf}}
+            <ion-icon slot="slot" name="thumbs-up-outline"></ion-icon> {{cerbung.like}}</ion-label> <br>
+        </ion-item>
+        <ion-item>
+          {{cerbung.deskripsi}}
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="ReadCerbung()">Read</ion-button>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
