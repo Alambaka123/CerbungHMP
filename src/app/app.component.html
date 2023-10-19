@@ -5,49 +5,32 @@
         <ion-title>Cerbung List</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
-      <ion-list>
-
-        <ion-menu-toggle>
-          <ion-item routerLink="/home">
-            <ion-icon name="home" slot="start"></ion-icon>
-            <ion-label>Home</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-
-        <ion-menu-toggle>
-          <ion-item routerLink="/following">
-            <ion-icon name="book-outline" slot="start"></ion-icon>
-            <ion-label>Following</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-
-        <ion-menu-toggle>
-          <ion-item routerLink="/create">
-            <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
-            <ion-label>Create</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-
-        <ion-menu-toggle>
-          <ion-item routerLink="/users">
-            <ion-icon name="people-outline" slot="start"></ion-icon>
-            <ion-label>Users</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-
-        <ion-menu-toggle>
-          <ion-item routerLink="/prefs">
-            <ion-icon name="settings-outline" slot="start"></ion-icon>
-            <ion-label>Prefs</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-
-      </ion-list>
-    </ion-content>
   </ion-menu>
 
   <ion-router-outlet id="main-content"></ion-router-outlet>
+  <ion-tabs>
+    <ion-tab-bar *ngIf="!isLoginAndRegisterPage()" slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="storefront"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="following">
+        <ion-icon name="book-outline"></ion-icon>
+        <ion-label>Following</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="create">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+        <ion-label>Create</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="users">
+        <ion-icon name="people-outline"></ion-icon>
+        <ion-label>Users</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="prefs">
+        <ion-icon name="settings-outline"></ion-icon>
+        <ion-label>Prefs</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
   <!-- tabs.page.html -->
-  
 </ion-app>

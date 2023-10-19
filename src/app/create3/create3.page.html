@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Create Cerbung</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">create3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <ion-card>
+      <img [src]="cerbungs?.url" />
+      <ion-card-header>
+        <ion-card-title>{{cerbungs?.judul}}</ion-card-title>
+        
+        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      </ion-card-header>
+      <ion-item>
+        <ion-badge>{{cerbungs?.genre}}</ion-badge>
+        <ion-badge *ngIf="cerbungs?.akses=='public'">Public</ion-badge>
+        <ion-badge *ngIf="cerbungs?.akses=='restricted'">Restricted</ion-badge>
+      </ion-item>
+
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item>{{cerbungs?.deskripsi}}</ion-item>
+          <ion-item>by {{cerbungs?.author}}</ion-item>
+          <ion-item>{{cerbungs?.paragrafs[0]}}</ion-item>
+          <ion-checkbox labelPlacement="end">I agree with the rules and policies in creating Cerbung. This includes not containing racial slurs, discrimination, religion, advertisements, and politics</ion-checkbox> <br>
+          <ion-button (click)="submit()" slot="end" >Submit</ion-button>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

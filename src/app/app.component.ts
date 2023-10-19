@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  showTabs = true;
+  constructor(private router:Router) {}
+
+  isLoginAndRegisterPage(): boolean {
+    return this.router.url.includes('sign-in') || this.router.url.includes('sign-up');
+  }
+
+  
 }

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Create Cerbung</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Create Cerbung</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item>
+    <ion-list>
+      <ion-label>Access to this Cerbung</ion-label>
+      <br>
+      <ion-radio-group [(ngModel)]="new_akses" value="access">
+        <ion-item>
+          <ion-radio labelPlacement="end" value="restricted" slot="start">Restricted <br> (all users approved
+            can contributes)</ion-radio> <br>
+        </ion-item>
+
+        <ion-item>
+          <ion-radio labelPlacement="end" value="public" slot="start">Public <br> (all users
+            can contributes)</ion-radio> <br>
+        </ion-item>
+      </ion-radio-group>
+      <ion-item>
+        <ion-textarea label="Write First Paragraph" labelPlacement="floating" rows="5" auto-grow="true"
+          [(ngModel)]="new_content"></ion-textarea>
+      </ion-item>
+      <ion-button id="btnCreate" fill="solid" color="dark" (click)="submit()" slot="end">Submit</ion-button>
+    </ion-list>
+  </ion-item>
+
+
+</ion-content>

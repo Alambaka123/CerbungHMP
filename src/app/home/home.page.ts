@@ -30,8 +30,8 @@ export class HomePage {
 
   }
 
-  ReadCerbung(){
-    this.router.navigate(['/read'])
+  ReadCerbung(id:number){
+    this.router.navigate(["/read", id]);
   }
 
 }

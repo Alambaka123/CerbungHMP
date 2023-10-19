@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./users/users.module').then( m => m.UsersPageModule)
   },
   {
-    path: 'read',
+    path: 'read/:id',
     loadChildren: () => import('./read/read.module').then( m => m.ReadPageModule)
   },
   {
@@ -50,6 +50,14 @@ const routes: Routes = [
   {
     path: 'profile-lain',
     loadChildren: () => import('./profile-lain/profile-lain.module').then( m => m.ProfileLainPageModule)
+  },
+  {
+    path: 'create2/:id',
+    loadChildren: () => import('./create2/create2.module').then( m => m.Create2PageModule)
+  },
+  {
+    path: 'create3/:id',
+    loadChildren: () => import('./create3/create3.module').then( m => m.Create3PageModule)
   },
 ];
 
